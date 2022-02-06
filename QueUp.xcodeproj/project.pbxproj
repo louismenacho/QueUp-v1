@@ -16,6 +16,12 @@
 		95258D5427A788C50048A18B /* QueUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95258D5327A788C50048A18B /* QueUpTests.swift */; };
 		95258D5E27A788C50048A18B /* QueUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95258D5D27A788C50048A18B /* QueUpUITests.swift */; };
 		95258D6027A788C50048A18B /* QueUpUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95258D5F27A788C50048A18B /* QueUpUITestsLaunchTests.swift */; };
+		95258D6E27B01E0B0048A18B /* SpotifyiOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95258D6D27B01E0B0048A18B /* SpotifyiOS.xcframework */; };
+		95258D6F27B01E0B0048A18B /* SpotifyiOS.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95258D6D27B01E0B0048A18B /* SpotifyiOS.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95258D7727B02A1C0048A18B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 95258D7627B02A1C0048A18B /* FirebaseAuth */; };
+		95258D7927B02A1C0048A18B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 95258D7827B02A1C0048A18B /* FirebaseFirestore */; };
+		95258D7B27B02A1C0048A18B /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 95258D7A27B02A1C0048A18B /* FirebaseFirestoreSwift-Beta */; };
+		95258D7E27B02A410048A18B /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 95258D7D27B02A410048A18B /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +41,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		95258D7027B01E0B0048A18B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				95258D6F27B01E0B0048A18B /* SpotifyiOS.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		95258D3927A788C40048A18B /* QueUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QueUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95258D3C27A788C40048A18B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +69,8 @@
 		95258D5927A788C50048A18B /* QueUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QueUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95258D5D27A788C50048A18B /* QueUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueUpUITests.swift; sourceTree = "<group>"; };
 		95258D5F27A788C50048A18B /* QueUpUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueUpUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		95258D6D27B01E0B0048A18B /* SpotifyiOS.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SpotifyiOS.xcframework; path = "../../Downloads/ios-sdk-master/SpotifyiOS.xcframework"; sourceTree = "<group>"; };
+		95258D7127B025820048A18B /* QueUp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QueUp-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +78,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95258D7927B02A1C0048A18B /* FirebaseFirestore in Frameworks */,
+				95258D7B27B02A1C0048A18B /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				95258D7727B02A1C0048A18B /* FirebaseAuth in Frameworks */,
+				95258D6E27B01E0B0048A18B /* SpotifyiOS.xcframework in Frameworks */,
+				95258D7E27B02A410048A18B /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +110,7 @@
 				95258D5227A788C50048A18B /* QueUpTests */,
 				95258D5C27A788C50048A18B /* QueUpUITests */,
 				95258D3A27A788C40048A18B /* Products */,
+				95258D6C27B01E0B0048A18B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +129,7 @@
 			children = (
 				95258D3C27A788C40048A18B /* AppDelegate.swift */,
 				95258D3E27A788C40048A18B /* SceneDelegate.swift */,
+				95258D7127B025820048A18B /* QueUp-Bridging-Header.h */,
 				95258D4027A788C40048A18B /* ViewController.swift */,
 				95258D4227A788C40048A18B /* Main.storyboard */,
 				95258D4527A788C50048A18B /* Assets.xcassets */,
@@ -127,6 +156,14 @@
 			path = QueUpUITests;
 			sourceTree = "<group>";
 		};
+		95258D6C27B01E0B0048A18B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95258D6D27B01E0B0048A18B /* SpotifyiOS.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,12 +174,19 @@
 				95258D3527A788C40048A18B /* Sources */,
 				95258D3627A788C40048A18B /* Frameworks */,
 				95258D3727A788C40048A18B /* Resources */,
+				95258D7027B01E0B0048A18B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = QueUp;
+			packageProductDependencies = (
+				95258D7627B02A1C0048A18B /* FirebaseAuth */,
+				95258D7827B02A1C0048A18B /* FirebaseFirestore */,
+				95258D7A27B02A1C0048A18B /* FirebaseFirestoreSwift-Beta */,
+				95258D7D27B02A410048A18B /* SDWebImage */,
+			);
 			productName = QueUp;
 			productReference = 95258D3927A788C40048A18B /* QueUp.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +259,10 @@
 				Base,
 			);
 			mainGroup = 95258D3027A788C40048A18B;
+			packageReferences = (
+				95258D7527B02A1C0048A18B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				95258D7C27B02A410048A18B /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 95258D3A27A788C40048A18B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -445,6 +493,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -455,8 +504,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.louismenacho.QueUp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "QueUp/QueUp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -473,6 +523,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -483,8 +534,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.louismenacho.QueUp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "QueUp/QueUp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -624,6 +676,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		95258D7527B02A1C0048A18B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "http://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+		95258D7C27B02A410048A18B /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		95258D7627B02A1C0048A18B /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95258D7527B02A1C0048A18B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		95258D7827B02A1C0048A18B /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95258D7527B02A1C0048A18B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		95258D7A27B02A1C0048A18B /* FirebaseFirestoreSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95258D7527B02A1C0048A18B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreSwift-Beta";
+		};
+		95258D7D27B02A410048A18B /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95258D7C27B02A410048A18B /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 95258D3127A788C40048A18B /* Project object */;
 }
