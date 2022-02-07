@@ -16,12 +16,13 @@
 		95258D5427A788C50048A18B /* QueUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95258D5327A788C50048A18B /* QueUpTests.swift */; };
 		95258D5E27A788C50048A18B /* QueUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95258D5D27A788C50048A18B /* QueUpUITests.swift */; };
 		95258D6027A788C50048A18B /* QueUpUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95258D5F27A788C50048A18B /* QueUpUITestsLaunchTests.swift */; };
-		95258D6E27B01E0B0048A18B /* SpotifyiOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95258D6D27B01E0B0048A18B /* SpotifyiOS.xcframework */; };
-		95258D6F27B01E0B0048A18B /* SpotifyiOS.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95258D6D27B01E0B0048A18B /* SpotifyiOS.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95258D7727B02A1C0048A18B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 95258D7627B02A1C0048A18B /* FirebaseAuth */; };
 		95258D7927B02A1C0048A18B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 95258D7827B02A1C0048A18B /* FirebaseFirestore */; };
 		95258D7B27B02A1C0048A18B /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 95258D7A27B02A1C0048A18B /* FirebaseFirestoreSwift-Beta */; };
 		95258D7E27B02A410048A18B /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 95258D7D27B02A410048A18B /* SDWebImage */; };
+		95258D8027B0FC940048A18B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95258D7F27B0FC940048A18B /* GoogleService-Info.plist */; };
+		95258D8227B0FD020048A18B /* SpotifyiOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95258D8127B0FD020048A18B /* SpotifyiOS.xcframework */; };
+		95258D8327B0FD020048A18B /* SpotifyiOS.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95258D8127B0FD020048A18B /* SpotifyiOS.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,13 +43,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		95258D7027B01E0B0048A18B /* Embed Frameworks */ = {
+		95258D8427B0FD020048A18B /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				95258D6F27B01E0B0048A18B /* SpotifyiOS.xcframework in Embed Frameworks */,
+				95258D8327B0FD020048A18B /* SpotifyiOS.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,8 +70,9 @@
 		95258D5927A788C50048A18B /* QueUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QueUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95258D5D27A788C50048A18B /* QueUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueUpUITests.swift; sourceTree = "<group>"; };
 		95258D5F27A788C50048A18B /* QueUpUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueUpUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		95258D6D27B01E0B0048A18B /* SpotifyiOS.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SpotifyiOS.xcframework; path = "../../Downloads/ios-sdk-master/SpotifyiOS.xcframework"; sourceTree = "<group>"; };
 		95258D7127B025820048A18B /* QueUp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QueUp-Bridging-Header.h"; sourceTree = "<group>"; };
+		95258D7F27B0FC940048A18B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		95258D8127B0FD020048A18B /* SpotifyiOS.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SpotifyiOS.xcframework; path = Frameworks/SpotifyiOS.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +83,7 @@
 				95258D7927B02A1C0048A18B /* FirebaseFirestore in Frameworks */,
 				95258D7B27B02A1C0048A18B /* FirebaseFirestoreSwift-Beta in Frameworks */,
 				95258D7727B02A1C0048A18B /* FirebaseAuth in Frameworks */,
-				95258D6E27B01E0B0048A18B /* SpotifyiOS.xcframework in Frameworks */,
+				95258D8227B0FD020048A18B /* SpotifyiOS.xcframework in Frameworks */,
 				95258D7E27B02A410048A18B /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,6 +137,7 @@
 				95258D4527A788C50048A18B /* Assets.xcassets */,
 				95258D4727A788C50048A18B /* LaunchScreen.storyboard */,
 				95258D4A27A788C50048A18B /* Info.plist */,
+				95258D7F27B0FC940048A18B /* GoogleService-Info.plist */,
 			);
 			path = QueUp;
 			sourceTree = "<group>";
@@ -159,7 +162,7 @@
 		95258D6C27B01E0B0048A18B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				95258D6D27B01E0B0048A18B /* SpotifyiOS.xcframework */,
+				95258D8127B0FD020048A18B /* SpotifyiOS.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -174,7 +177,7 @@
 				95258D3527A788C40048A18B /* Sources */,
 				95258D3627A788C40048A18B /* Frameworks */,
 				95258D3727A788C40048A18B /* Resources */,
-				95258D7027B01E0B0048A18B /* Embed Frameworks */,
+				95258D8427B0FD020048A18B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -280,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95258D4927A788C50048A18B /* LaunchScreen.storyboard in Resources */,
+				95258D8027B0FC940048A18B /* GoogleService-Info.plist in Resources */,
 				95258D4627A788C50048A18B /* Assets.xcassets in Resources */,
 				95258D4427A788C40048A18B /* Main.storyboard in Resources */,
 			);
