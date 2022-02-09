@@ -30,8 +30,8 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.prefersLargeTitles = true
         vm = HomeViewModel()
-        formView.roomCodeTextField.text = UserDefaultsRepository().roomID
-        formView.displayNameTextField.text = UserDefaultsRepository().displayName
+        formView.setRoomCode(UserDefaultsRepository().roomID)
+        formView.setDisplayName(UserDefaultsRepository().displayName)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

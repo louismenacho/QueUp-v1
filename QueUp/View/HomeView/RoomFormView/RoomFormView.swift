@@ -74,6 +74,17 @@ class RoomFormView: UIStackView {
         spotifyButton.isHidden = false
         spotifyButton.isEnabled = !displayNameTextField.text!.isEmpty
     }
+    
+    func setRoomCode(_ roomCode: String) {
+        roomCodeTextField.text = roomCode
+        joinButton.isEnabled = !displayNameTextField.text!.isEmpty && roomCodeTextField.text!.count == 4
+    }
+    
+    func setDisplayName(_ displayName: String) {
+        displayNameTextField.text = displayName
+        joinButton.isEnabled = !displayNameTextField.text!.isEmpty && roomCodeTextField.text!.count == 4
+        spotifyButton.isEnabled = !displayNameTextField.text!.isEmpty
+    }
 }
 
 extension RoomFormView: UITextFieldDelegate {

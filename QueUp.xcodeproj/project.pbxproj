@@ -315,9 +315,9 @@
 		95258D9927B100990048A18B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				95258DA927B100990048A18B /* ActivityIndicatorView.swift */,
 				95258D9C27B100990048A18B /* LaunchScreen.storyboard */,
 				95258D9E27B100990048A18B /* Main.storyboard */,
+				95258DA927B100990048A18B /* ActivityIndicatorView.swift */,
 				95258D9A27B100990048A18B /* RoomDetailView */,
 				95258DA027B100990048A18B /* HomeView */,
 				95258DA727B100990048A18B /* SearchView */,
@@ -346,8 +346,8 @@
 		95258DA127B100990048A18B /* RoomFormView */ = {
 			isa = PBXGroup;
 			children = (
-				95258DA227B100990048A18B /* RoomFormTextField.swift */,
 				95258DA327B100990048A18B /* RoomFormView.swift */,
+				95258DA227B100990048A18B /* RoomFormTextField.swift */,
 				95258DA427B100990048A18B /* RoomFormButton.swift */,
 				95258DA527B100990048A18B /* RoomFormSegmentedControl.swift */,
 			);

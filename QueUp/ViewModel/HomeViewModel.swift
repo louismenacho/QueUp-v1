@@ -40,8 +40,9 @@ class HomeViewModel: NSObject {
             newRoom.host = newMember
             return self.getSpotifyConfiguration()
         }
-        .flatMap { config in
-            self.initiateSpotifySession(config: config)
+        .flatMap { config -> Future<SPTSession, Error> in
+            self.spotifyConfig = config
+            return self.initiateSpotifySession(config: config)
         }
         .flatMap { session -> Future<String, Error> in
             newRoom.spotifyToken = session.accessToken
@@ -179,6 +180,7 @@ class HomeViewModel: NSObject {
     private func initiateSpotifySession(config: SPTConfiguration) -> Future<SPTSession, Error> {
         Future { [self] promise in
             let sessionManager = SPTSessionManager(configuration: config, delegate: self)
+            self.spotifySessionManager = sessionManager
             guard sessionManager.isSpotifyAppInstalled else {
                 promise(.failure(AppError.spotifyAppNotFoundError))
                 return
