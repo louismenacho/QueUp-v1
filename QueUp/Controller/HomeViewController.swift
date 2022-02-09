@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var formView: RoomFormView!
     @IBOutlet weak var formViewCenterYConstraint: NSLayoutConstraint!
+    @IBOutlet weak var footerLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,7 @@ class HomeViewController: UIViewController {
         formView.delegate = self
         addKeyboardObserver()
         appearanceSwitch.setOn(traitCollection.userInterfaceStyle == .light ? true : false)
+        footerLabel.isHidden = true
         navigationController?.view.addSubview(activityIndicator)
     }
     
@@ -103,7 +105,7 @@ extension HomeViewController: SwitchControlDelegate {
 extension HomeViewController: RoomFormViewDelegate {
     
     func roomFormView(_ roomFormView: RoomFormView, selectedSegmentDidChange selectedSegmentIndex: Int) {
-        
+        footerLabel.isHidden = selectedSegmentIndex == 0
     }
     
     func roomFormView(_ roomFormView: RoomFormView, displayNameTextFieldDidChange text: String?) {
