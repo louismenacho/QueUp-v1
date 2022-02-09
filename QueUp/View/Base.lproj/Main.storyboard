@@ -40,17 +40,26 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mZ1-CY-pE1">
                                 <rect key="frame" x="87" y="36" width="240" height="295"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TurnTune" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3CT-NQ-9UE">
-                                        <rect key="frame" x="60.5" y="129" width="119.5" height="37"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app.icon" translatesAutoresizingMaskIntoConstraints="NO" id="ynV-cC-s1l">
+                                        <rect key="frame" x="60" y="87.5" width="120" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="X1d-CZ-YC0"/>
+                                            <constraint firstAttribute="height" constant="120" id="xzH-hm-x6W"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QueUp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3CT-NQ-9UE">
+                                        <rect key="frame" x="64" y="215.5" width="112.5" height="41"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="3CT-NQ-9UE" firstAttribute="centerY" secondItem="mZ1-CY-pE1" secondAttribute="centerY" id="1yy-m5-8Rh"/>
+                                    <constraint firstItem="ynV-cC-s1l" firstAttribute="centerX" secondItem="mZ1-CY-pE1" secondAttribute="centerX" id="F2R-KS-iW1"/>
+                                    <constraint firstItem="3CT-NQ-9UE" firstAttribute="top" secondItem="ynV-cC-s1l" secondAttribute="bottom" constant="8" symbolic="YES" id="GIg-ZB-bW8"/>
                                     <constraint firstItem="3CT-NQ-9UE" firstAttribute="centerX" secondItem="mZ1-CY-pE1" secondAttribute="centerX" id="ch0-yF-TGX"/>
+                                    <constraint firstItem="ynV-cC-s1l" firstAttribute="centerY" secondItem="mZ1-CY-pE1" secondAttribute="centerY" id="epg-fJ-gNO"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="24P-eW-RD1" userLabel="Form View" customClass="RoomFormView" customModule="QueUp" customModuleProvider="target">
@@ -144,6 +153,7 @@
                             <constraint firstItem="24P-eW-RD1" firstAttribute="top" secondItem="mZ1-CY-pE1" secondAttribute="bottom" constant="8" symbolic="YES" id="VNY-ga-UUX"/>
                             <constraint firstItem="mZ1-CY-pE1" firstAttribute="centerX" secondItem="5GN-ZT-OWp" secondAttribute="centerX" id="VxL-3F-eoI"/>
                             <constraint firstItem="mZ1-CY-pE1" firstAttribute="top" secondItem="iPe-PM-CZS" secondAttribute="top" constant="-52" id="uLa-Hc-opH"/>
+                            <constraint firstItem="24P-eW-RD1" firstAttribute="top" secondItem="mZ1-CY-pE1" secondAttribute="bottom" constant="8" symbolic="YES" id="uV1-Jq-esC"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Hwj-98-ni9" appends="YES" id="TVb-X2-dFo"/>
@@ -187,6 +197,7 @@
                         <outlet property="appearanceSwitch" destination="y5E-Vd-bw7" id="pvO-gc-Ry4"/>
                         <outlet property="formView" destination="24P-eW-RD1" id="e05-53-djW"/>
                         <outlet property="formViewCenterYConstraint" destination="9qz-gz-dVj" id="x1H-By-aF1"/>
+                        <outlet property="headerView" destination="mZ1-CY-pE1" id="VRZ-9a-gbc"/>
                         <segue destination="oO9-CS-oMz" kind="show" identifier="PlaylistViewController" id="rrP-j2-ipO"/>
                     </connections>
                 </viewController>
@@ -557,6 +568,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="app.icon" width="637" height="681"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="play.circle.fill" catalog="system" width="128" height="121"/>

@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
         
     lazy var activityIndicator = ActivityIndicatorView(frame: view.bounds)
     @IBOutlet weak var appearanceSwitch: SwitchControl!
+    @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var formView: RoomFormView!
     @IBOutlet weak var formViewCenterYConstraint: NSLayoutConstraint!
     
@@ -52,6 +53,7 @@ class HomeViewController: UIViewController {
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRect = keyboardFrame.cgRectValue
             UIView.animate(withDuration: 0.1) { [self] in
+                headerView.alpha = 0
                 formViewCenterYConstraint.constant = -(keyboardRect.height - 34)/2
                 view.layoutIfNeeded()
             }
@@ -60,6 +62,7 @@ class HomeViewController: UIViewController {
     
     @objc func keyboardWillHide(_ notification: Notification) {
         UIView.animate(withDuration: 0.1) { [self] in
+            headerView.alpha = 1
             formViewCenterYConstraint.constant = 0
             view.layoutIfNeeded()
         }
