@@ -75,6 +75,10 @@ class HomeViewController: UIViewController {
         view.endEditing(true)
     }
     
+    @IBAction func privacyPolicyButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "PolicyViewController", sender: self)
+    }
+    
     func handleError(_ error: NSError) {
         self.presentAlert(
             title: error.localizedDescription,
