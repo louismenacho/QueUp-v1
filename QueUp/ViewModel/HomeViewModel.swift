@@ -19,9 +19,6 @@ class HomeViewModel: NSObject {
     var spotifyConfig: SPTConfiguration?
     var spotifyScope: SPTScope = [
         .appRemoteControl,
-        .userReadCurrentlyPlaying,
-        .userReadRecentlyPlayed,
-        .userReadPlaybackState,
         .userModifyPlaybackState,
         .userReadPrivate
     ]
