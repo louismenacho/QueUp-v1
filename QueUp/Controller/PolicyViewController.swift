@@ -9,17 +9,41 @@ import UIKit
 import WebKit
 
 class PolicyViewController: UIViewController {
-
-    @IBOutlet weak var webView: WKWebView!
+    
+    private static var policyWebView: WKWebView = {
+        let url = URL(string: "https://louismenacho.github.io/QueUp/policy/privacy.html")!
+        let webView = WKWebView()
+        webView.load(URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData))
+        return webView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = URL(string: "https://louismenacho.github.io/QueUp/policy/privacy.html")!
-        webView.load(URLRequest(url: url))
+        PolicyViewController.policyWebView.frame = view.bounds
+        view.addSubview(PolicyViewController.policyWebView)
+        PolicyViewController.policyWebView.navigationDelegate = self
     }
     
     @IBAction func closeWebViewButtonPressed(_ sender: UIButton) {
         dismiss(animated: true)
     }
     
+}
+
+extension PolicyViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        guard
+            let url = navigationAction.request.url,
+            let scheme = url.scheme else {
+                decisionHandler(.cancel)
+                return
+            }
+        
+        if (scheme.lowercased() == "mailto") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            decisionHandler(.cancel)
+            return
+        }
+        decisionHandler(.allow)
+    }
 }
