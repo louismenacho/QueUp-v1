@@ -303,10 +303,10 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWB-lC-a8c">
-                                <rect key="frame" x="154.66666666666666" y="405.66666666666669" width="81" height="33"/>
+                                <rect key="frame" x="146" y="405.66666666666669" width="98" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Add songs"/>
+                                <state key="normal" title="ADD SONGS"/>
                                 <connections>
                                     <action selector="addSongButtonPressed:" destination="oO9-CS-oMz" eventType="touchUpInside" id="yPy-zV-D0w"/>
                                 </connections>

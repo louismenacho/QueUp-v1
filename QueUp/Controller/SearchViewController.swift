@@ -103,7 +103,7 @@ extension SearchViewController: SearchTableViewCellDelegate {
                         delegate?.searchViewController(self, renewSpotifyToken: ())
                     }
                     if code == 404 {
-                        presentAlert(title: "Host Spotify player is inactive", actionTitle: "Dismiss")
+                        presentAlert(title: "Host must start playback to add songs", actionTitle: "Dismiss")
                     }
                 } else {
                     print(error)

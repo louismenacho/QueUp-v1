@@ -375,10 +375,10 @@
 		95258DAC27B100990048A18B /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				95258DAD27B100990048A18B /* RepositoryError.swift */,
 				95258DAE27B100990048A18B /* UserDefaults */,
 				95258DB127B100990048A18B /* Firestore */,
 				95258DB427B100990048A18B /* RemoteRepository.swift */,
+				95258DAD27B100990048A18B /* RepositoryError.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
