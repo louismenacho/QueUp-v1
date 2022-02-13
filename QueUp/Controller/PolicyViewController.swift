@@ -20,7 +20,7 @@ class PolicyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         PolicyViewController.policyWebView.frame = view.bounds
-        view.addSubview(PolicyViewController.policyWebView)
+        view.insertSubview(PolicyViewController.policyWebView, at: 0)
         PolicyViewController.policyWebView.navigationDelegate = self
     }
     
