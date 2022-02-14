@@ -418,9 +418,9 @@
 			isa = PBXGroup;
 			children = (
 				95258DBE27B100990048A18B /* HomeViewModel.swift */,
-				95258DBF27B100990048A18B /* RoomDetailsViewModel.swift */,
-				95258DC127B100990048A18B /* SearchViewModel.swift */,
 				95258DC227B100990048A18B /* PlaylistViewModel.swift */,
+				95258DC127B100990048A18B /* SearchViewModel.swift */,
+				95258DBF27B100990048A18B /* RoomDetailsViewModel.swift */,
 				95258DC027B100990048A18B /* AppError.swift */,
 			);
 			path = ViewModel;

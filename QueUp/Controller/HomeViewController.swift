@@ -30,6 +30,7 @@ class HomeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        navigationItem.backButtonTitle = "Home"
         navigationController?.navigationBar.prefersLargeTitles = true
         vm = HomeViewModel()
         formView.setRoomCode(UserDefaultsRepository().roomID)
@@ -80,17 +81,17 @@ class HomeViewController: UIViewController {
     }
     
     func handleError(_ error: NSError) {
-        self.presentAlert(
-            title: error.localizedDescription,
-            actionTitle: error.localizedRecoverySuggestion ?? "Dismiss",
-            actionStyle: .cancel,
-            action: { action in
-                if let error = error as? AppError, case .spotifyAppNotFoundError = error {
+        if let appError = error as? AppError, case .spotifyAppNotFoundError = appError {
+            presentAlert(title: error.localizedDescription, actions: [
+                (title: error.localizedRecoverySuggestion!, style: .default, { _ in
                     let url = URL(string: "itms-apps://apple.com/app/spotify-new-music-and-podcasts/id324684580")!
                     UIApplication.shared.open(url)
-                }
-            }
-        )
+                }),
+                (title: "Dismiss", style: .cancel, nil)
+            ])
+        } else {
+            self.presentAlert(title: error.localizedDescription, actionTitle: error.localizedRecoverySuggestion ?? "Dismiss")
+        }
     }
 }
 

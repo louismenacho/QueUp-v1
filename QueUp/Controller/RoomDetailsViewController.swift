@@ -11,6 +11,7 @@ class RoomDetailsViewController: UIViewController {
     
     var vm: RoomDetailsViewModel!
 
+    @IBOutlet weak var leaveRoomButton: UIBarButtonItem!
     @IBOutlet weak var roomIDLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableHeaderView: UIView!
@@ -21,6 +22,9 @@ class RoomDetailsViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableHeaderView.frame.size = CGSize(width: view.frame.width, height: view.frame.width/2)
+        if !vm.currentMember.isHost {
+            navigationItem.setRightBarButton(nil, animated: true)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,6 +45,20 @@ class RoomDetailsViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         vm.removeMembersChangeListener()
+    }
+    
+    @IBAction func leaveRoomButtonPressed(_ sender: UIBarButtonItem) {
+        presentAlert(title: "Are you sure you want to close this room?", actions: [
+            (title: "No", style: .cancel, nil),
+            (title: "Yes", style: .destructive, { [self] _ in
+                vm.deleteRoom { [self] result in
+                    if case .failure(let error) = result {
+                        print(error)
+                        presentAlert(title: error.localizedDescription, actionTitle: "Dismiss")
+                    }
+                }
+            })
+        ])
     }
 }
 

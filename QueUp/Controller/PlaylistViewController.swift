@@ -28,8 +28,12 @@ class PlaylistViewController: UIViewController {
         vm.roomChangeListener { [self] result in
             switch result {
             case .failure(let error):
-                print(error)
-                presentAlert(title: error.localizedDescription, actionTitle: "Dismiss")
+                if case .notFound = error {
+                    navigationController?.popToRootViewController(animated: true)
+                } else {
+                    print(error)
+                    presentAlert(title: error.localizedDescription, actionTitle: "Dismiss")
+                }
             case .success(let room):
                 print("room updated")
                 searchViewController.vm.updateSpotifyToken(room.spotifyToken)
