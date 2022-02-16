@@ -29,7 +29,7 @@ struct Song: Codable {
         name = spotifyTrack.name
         artist = spotifyTrack.artists.map { $0.name }.joined(separator: ", ")
         album = spotifyTrack.album.name
-        artworkURL = spotifyTrack.album.images[0].url
+        artworkURL = spotifyTrack.album.images.isEmpty ? "" : spotifyTrack.album.images[0].url
         duration = spotifyTrack.durationMS
         spotifyURI = spotifyTrack.uri
     }

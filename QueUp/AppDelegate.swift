@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        UIBarButtonItem.appearance().setTitleTextAttributes([.font: UIFont(name: "Avenir Next", size: 17) ?? .systemFont(ofSize: 17)], for: .normal)
         return true
     }
 

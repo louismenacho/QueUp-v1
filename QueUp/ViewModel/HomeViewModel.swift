@@ -111,8 +111,9 @@ class HomeViewModel: NSObject {
                 .eraseToAnyPublisher()
             } else {
                 publisher = self.getSpotifyConfiguration()
-                .flatMap { config in
-                    self.initiateSpotifySession(config: config)
+                .flatMap { config -> Future<SPTSession, Error> in
+                    self.spotifyConfig = config
+                    return self.initiateSpotifySession(config: config)
                 }
                 .flatMap { session -> Future<String, Error> in
                     currentRoom.spotifyToken = session.accessToken
@@ -190,7 +191,7 @@ class HomeViewModel: NSObject {
             }
             
             spotifyInitiateSessionSubject
-            .timeout(15, scheduler: DispatchQueue.main, options: nil) {
+            .timeout(12, scheduler: DispatchQueue.main, options: nil) {
                 AppError.error("Could not initiate Spotify session")
             }
             .sink { completion in
@@ -198,6 +199,7 @@ class HomeViewModel: NSObject {
                     return
                 }
                 if case let .failure(error) = completion {
+                    
                     promise(.failure(error))
                 }
             } receiveValue: { session in

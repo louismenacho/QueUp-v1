@@ -19,6 +19,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="H3K-OM-kbi">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -75,12 +78,12 @@
                                             <action selector="selectedSegmentDidChange:" destination="24P-eW-RD1" eventType="valueChanged" id="dHO-by-6zR"/>
                                         </connections>
                                     </segmentedControl>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="DISPLAY NAME" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Ck-0Q-jYu" customClass="RoomFormTextField" customModule="QueUp" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="DISPLAY NAME" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="5Ck-0Q-jYu" customClass="RoomFormTextField" customModule="QueUp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="56" width="225" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="bDG-s7-Bst"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -91,12 +94,12 @@
                                             <action selector="displayNameTextFieldDidChange:" destination="24P-eW-RD1" eventType="editingChanged" id="R5R-pz-bxR"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ROOM ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IGV-r3-OhW" customClass="RoomFormTextField" customModule="QueUp" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ROOM ID" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="IGV-r3-OhW" customClass="RoomFormTextField" customModule="QueUp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="112" width="225" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="Z1s-Ap-VX8"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -113,6 +116,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="rbf-ET-CNY"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="JOIN"/>
@@ -126,7 +130,9 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="znS-It-gDJ"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
                                         <state key="normal" title="CONNECT SPOTIFY" image="spotify.icon"/>
                                         <connections>
@@ -135,7 +141,7 @@
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You need a Spotify Premium account to create a room" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="HOO-S8-jvS">
                                         <rect key="frame" x="0.0" y="280" width="225" height="48"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -149,8 +155,8 @@
                                 </connections>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qeX-Ud-UL2">
-                                <rect key="frame" x="158.66666666666666" y="784" width="73" height="26"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <rect key="frame" x="149.66666666666666" y="777" width="91" height="33"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Privacy Policy"/>
                                 <connections>
@@ -261,23 +267,23 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="WXe-rS-2c0">
-                                                    <rect key="frame" x="95" y="11.666666666666668" width="275" height="44.666666666666657"/>
+                                                    <rect key="frame" x="95" y="3.6666666666666679" width="275" height="60.666666666666657"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPX-R8-6jf">
-                                                            <rect key="frame" x="0.0" y="0.0" width="275" height="17"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="275" height="23.333333333333332"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artists" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZX-CO-RZT">
-                                                            <rect key="frame" x="0.0" y="17" width="275" height="14.333333333333336"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                            <rect key="frame" x="0.0" y="23.333333333333329" width="275" height="20.666666666666671"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                                             <color key="textColor" systemColor="secondaryLabelColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Added By" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Yl-Sj-CJr">
-                                                            <rect key="frame" x="0.0" y="31.333333333333332" width="275" height="13.333333333333332"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                            <rect key="frame" x="0.0" y="44" width="275" height="16.666666666666671"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
                                                             <color key="textColor" systemColor="tertiaryLabelColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -303,10 +309,10 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWB-lC-a8c">
-                                <rect key="frame" x="146" y="405.66666666666669" width="98" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="152" y="404" width="86" height="36"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="ADD SONGS"/>
+                                <state key="normal" title="Add Songs"/>
                                 <connections>
                                     <action selector="addSongButtonPressed:" destination="oO9-CS-oMz" eventType="touchUpInside" id="yPy-zV-D0w"/>
                                 </connections>
@@ -317,30 +323,33 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kBb-a9-hEN">
                                         <rect key="frame" x="20" y="20" width="350" height="39"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="LV6-iy-mUj">
-                                                <rect key="frame" x="0.0" y="0.0" width="350" height="39"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Yvc-AX-mCr">
+                                                <rect key="frame" x="82.666666666666686" y="0.0" width="185" height="39"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LG5-04-eov">
-                                                        <rect key="frame" x="311" y="0.0" width="39" height="39"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" image="play.circle.fill" catalog="system"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XiE-8D-0ul" customClass="SpotifyPlayButton" customModule="QueUp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="185" height="39"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                        <color key="tintColor" red="0.11443904789999999" green="0.72594159840000005" blue="0.32852503659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                        <state key="normal" title="Continue Playing" image="spotify.icon.green">
+                                                            <color key="titleColor" systemColor="linkColor"/>
+                                                        </state>
                                                         <connections>
-                                                            <action selector="playButtonPressed:" destination="oO9-CS-oMz" eventType="touchUpInside" id="Cjz-7n-ofh"/>
+                                                            <action selector="playButtonPressed:" destination="oO9-CS-oMz" eventType="touchUpInside" id="uCn-Xj-lVy"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="LG5-04-eov" firstAttribute="width" secondItem="LV6-iy-mUj" secondAttribute="height" multiplier="1:1" id="iXo-sr-VCB"/>
+                                                    <constraint firstAttribute="width" constant="185" id="ZZo-A0-tLv"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="LV6-iy-mUj" firstAttribute="leading" secondItem="kBb-a9-hEN" secondAttribute="leading" id="J8L-gR-bnC"/>
-                                            <constraint firstItem="LV6-iy-mUj" firstAttribute="top" secondItem="kBb-a9-hEN" secondAttribute="top" id="Tjt-s0-LqQ"/>
-                                            <constraint firstAttribute="trailing" secondItem="LV6-iy-mUj" secondAttribute="trailing" id="ZZh-6S-4yZ"/>
-                                            <constraint firstAttribute="bottom" secondItem="LV6-iy-mUj" secondAttribute="bottom" id="dfV-rN-8d9"/>
+                                            <constraint firstItem="Yvc-AX-mCr" firstAttribute="top" secondItem="kBb-a9-hEN" secondAttribute="top" id="DeZ-6l-Q3B"/>
+                                            <constraint firstItem="Yvc-AX-mCr" firstAttribute="centerX" secondItem="kBb-a9-hEN" secondAttribute="centerX" id="mtb-p6-fTV"/>
+                                            <constraint firstAttribute="bottom" secondItem="Yvc-AX-mCr" secondAttribute="bottom" id="rEC-HN-Aa3"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -382,13 +391,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addSongsButton" destination="DWB-lC-a8c" id="oNQ-pf-QD0"/>
-                        <outlet property="playButton" destination="LG5-04-eov" id="zm7-91-aL4"/>
+                        <outlet property="spotifyPlayButton" destination="XiE-8D-0ul" id="Kas-eh-TzI"/>
                         <outlet property="tableView" destination="0Xu-eY-TYh" id="NIb-KV-GZ3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAc-96-qxC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1724.6376811594205" y="0.0"/>
+            <point key="canvasLocation" x="1724.6153846153845" y="0.0"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="PmK-Fd-ZCG">
@@ -405,9 +414,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="43"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select songs to add to playlist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2W-EQ-mnk">
-                                            <rect key="frame" x="109.66666666666667" y="14.333333333333332" width="170.66666666666663" height="14.333333333333332"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select songs to add to queue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2W-EQ-mnk">
+                                            <rect key="frame" x="95.000000000000014" y="11.333333333333334" width="200.33333333333337" height="20.666666666666664"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                             <color key="textColor" systemColor="secondaryLabelColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -434,17 +443,17 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="766-aj-njs">
-                                                    <rect key="frame" x="95" y="18.333333333333336" width="236" height="31.333333333333336"/>
+                                                    <rect key="frame" x="95" y="12" width="236" height="44"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALJ-5x-BX2">
-                                                            <rect key="frame" x="0.0" y="0.0" width="236" height="17"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="236" height="23.333333333333332"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artists" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aio-sh-mdE">
-                                                            <rect key="frame" x="0.0" y="17.000000000000004" width="236" height="14.333333333333332"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                            <rect key="frame" x="0.0" y="23.333333333333336" width="236" height="20.666666666666664"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                                             <color key="textColor" systemColor="secondaryLabelColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -517,17 +526,17 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="T6W-oY-3Fg">
-                                            <rect key="frame" x="131.66666666666666" y="20" width="126.99999999999997" height="82"/>
+                                            <rect key="frame" x="119.33333333333333" y="10.333333333333336" width="151.66666666666669" height="101.33333333333331"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ROOM ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMQ-IM-W2r">
-                                                    <rect key="frame" x="0.0" y="0.0" width="127" height="37"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="151.66666666666666" height="46.666666666666664"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="34"/>
                                                     <color key="textColor" systemColor="secondaryLabelColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABCD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKn-DX-1BM">
-                                                    <rect key="frame" x="22.333333333333343" y="45" width="82.333333333333329" height="37"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                                    <rect key="frame" x="28.000000000000007" y="54.666666666666671" width="95.666666666666686" height="46.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="34"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -542,21 +551,21 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MemberTableViewCell" textLabel="PjY-U4-qJ3" imageView="0T3-UE-yid" style="IBUITableViewCellStyleDefault" id="fT5-Ti-7b5" customClass="MemberTableViewCell" customModule="QueUp" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="171" width="350" height="44"/>
+                                        <rect key="frame" x="20" y="171" width="350" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fT5-Ti-7b5" id="apH-Os-NZN">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PjY-U4-qJ3">
-                                                    <rect key="frame" x="55.666666666666657" y="0.0" width="274.33333333333331" height="44"/>
+                                                    <rect key="frame" x="55.666666666666657" y="0.0" width="274.33333333333331" height="47"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="person" catalog="system" id="0T3-UE-yid">
-                                                    <rect key="frame" x="21" y="13.333333333333334" width="18.666666666666668" height="17.666666666666668"/>
+                                                    <rect key="frame" x="21" y="14.666666666666666" width="18.666666666666668" height="17.666666666666668"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -628,10 +637,10 @@
         <image name="app.icon" width="212.33332824707031" height="227"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="person" catalog="system" width="128" height="117"/>
-        <image name="play.circle.fill" catalog="system" width="128" height="121"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
         <image name="rectangle.portrait.and.arrow.right" width="28.332500457763672" height="26.184099197387695"/>
         <image name="spotify.icon" width="30" height="30"/>
+        <image name="spotify.icon.green" width="20" height="20"/>
         <image name="sun.min.fill" catalog="system" width="128" height="121"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="linkColor">

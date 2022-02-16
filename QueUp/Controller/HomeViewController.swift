@@ -89,7 +89,14 @@ class HomeViewController: UIViewController {
                 }),
                 (title: "Dismiss", style: .cancel, nil)
             ])
-        } else {
+        }
+        
+        else if let error = error as NSError?, error.code == 1 {
+            presentAlert(title: "Your internet connection is unstable", actionTitle: "Dismiss")
+            return
+        }
+        
+        else {
             self.presentAlert(title: error.localizedDescription, actionTitle: error.localizedRecoverySuggestion ?? "Dismiss")
         }
     }

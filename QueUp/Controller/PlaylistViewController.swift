@@ -14,7 +14,7 @@ class PlaylistViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addSongsButton: UIButton!
-    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var spotifyPlayButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ class PlaylistViewController: UIViewController {
         navigationItem.hidesSearchBarWhenScrolling = false
         tableView.dataSource = self
         tableView.delegate = self
-        playButton.isHidden = !vm.isCurrentUserHost()
+        spotifyPlayButton.isHidden = !vm.isCurrentUserHost()
         
         vm.roomChangeListener { [self] result in
             switch result {
@@ -86,6 +86,10 @@ class PlaylistViewController: UIViewController {
         vm.wakeAndPlay { [self] result in
             if case .failure(let error) = result {
                 print(error)
+                if let error = error as NSError?, error.code == 1 {
+                    presentAlert(title: "Your internet connection is unstable", actionTitle: "Dismiss")
+                    return
+                }
                 presentAlert(title: error.localizedDescription, actionTitle: "Dismiss")
             }
         }
@@ -97,11 +101,15 @@ class PlaylistViewController: UIViewController {
         searchViewController.delegate = self
         
         let searchController = UISearchController(searchResultsController: searchViewController)
+        searchController.delegate = self
         searchController.searchResultsUpdater = searchViewController
-        searchController.searchBar.placeholder = "Search songs, artists, albums"
         searchController.searchBar.autocapitalizationType = .none
         searchController.searchBar.setValue("Done", forKey: "cancelButtonText")
-        searchController.delegate = self
+        if let textfield = searchController.searchBar.value(forKey: "searchField") as? UITextField {
+            let atrString = NSAttributedString(string: "Search songs, artists, albums",
+                                               attributes: [.font : UIFont(name: "Avenir Next", size: 17) ?? .systemFont(ofSize: 17)])
+            textfield.attributedPlaceholder = atrString
+        }
         return searchController
     }
     
