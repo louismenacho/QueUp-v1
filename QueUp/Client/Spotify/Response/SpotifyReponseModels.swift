@@ -378,7 +378,7 @@ struct PlayerStateResponse: Codable {
     var repeatState: String?
     var timestamp: Int?
     var context: Context?
-    var progressMS: Int
+    var progressMS: Int?
     var item: Item?
     var currentlyPlayingType: String?
     var actions: Actions?

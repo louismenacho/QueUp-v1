@@ -25,8 +25,6 @@ class PlaylistViewModel: NSObject {
     var spotifyConfig: SPTConfiguration?
     var spotifyScope: SPTScope = [
         .appRemoteControl,
-        .userReadCurrentlyPlaying,
-        .userReadRecentlyPlayed,
         .userReadPlaybackState,
         .userModifyPlaybackState,
         .userReadPrivate
@@ -104,6 +102,14 @@ class PlaylistViewModel: NSObject {
             } else {
                 completion(.success(()))
             }
+        }
+    }
+    
+    func getPlayerState(completion: @escaping (Result<PlayerStateResponse, ClientError>) -> Void) {
+        let playerAPI = SpotifyAPIClient<SpotifyPlayerAPI>()
+        playerAPI.auth = .bearer(token: room.spotifyToken)
+        playerAPI.request(.playerState) { result in
+            completion(result)
         }
     }
     

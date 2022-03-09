@@ -11,9 +11,10 @@ extension UIViewController {
     
     func presentAlert(title: String, message: String? = nil, style: UIAlertController.Style = .alert, actionTitle: String, actionStyle: UIAlertAction.Style = .cancel, action: ((UIAlertAction) -> Void)? = nil )
     {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: style)
-        alert.addAction(UIAlertAction(title: actionTitle, style: actionStyle, handler: action))
         DispatchQueue.main.async {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: style)
+            alert.addAction(UIAlertAction(title: actionTitle, style: actionStyle, handler: action))
+
             self.present(alert, animated: true) {
                 if style == .actionSheet {
                     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissAlertController))
@@ -25,11 +26,11 @@ extension UIViewController {
     
     func presentAlert(title: String, message: String? = nil, style: UIAlertController.Style = .alert, actions: [(title: String, style: UIAlertAction.Style, handler: ((UIAlertAction) -> Void)?)] )
     {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: style)
-        actions.forEach { action in
-            alert.addAction(UIAlertAction(title: action.title, style: action.style, handler: action.handler))
-        }
         DispatchQueue.main.async {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: style)
+            actions.forEach { action in
+                alert.addAction(UIAlertAction(title: action.title, style: action.style, handler: action.handler))
+            }
             self.present(alert, animated: true) {
                 if style == .actionSheet {
                     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissAlertController))

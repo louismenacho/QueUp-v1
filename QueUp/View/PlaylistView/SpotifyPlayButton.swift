@@ -12,7 +12,7 @@ class SpotifyPlayButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = 19.5
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.white.cgColor
+        layer.borderWidth = 2.0
+        layer.borderColor = UIColor.secondarySystemBackground.cgColor
     }
 }

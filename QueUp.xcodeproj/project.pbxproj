@@ -288,10 +288,10 @@
 		95258D8927B100990048A18B /* Spotify */ = {
 			isa = PBXGroup;
 			children = (
-				95258D8A27B100990048A18B /* Response */,
+				95258D9327B100990048A18B /* SpotifyAPIClient.swift */,
 				95258D8C27B100990048A18B /* SpotifyAPIEndpoint.swift */,
 				95258D8D27B100990048A18B /* Endpoint */,
-				95258D9327B100990048A18B /* SpotifyAPIClient.swift */,
+				95258D8A27B100990048A18B /* Response */,
 			);
 			path = Spotify;
 			sourceTree = "<group>";

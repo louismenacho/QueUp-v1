@@ -23,7 +23,12 @@ class PlaylistViewController: UIViewController {
         navigationItem.hidesSearchBarWhenScrolling = false
         tableView.dataSource = self
         tableView.delegate = self
-        spotifyPlayButton.isHidden = !vm.isCurrentUserHost()
+        spotifyPlayButton.isHidden = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = false
         
         vm.roomChangeListener { [self] result in
             switch result {
@@ -50,7 +55,6 @@ class PlaylistViewController: UIViewController {
                 }
             }
         }
-
         
         vm.playlistChangeListener { [self] result in
             switch result {
@@ -65,10 +69,34 @@ class PlaylistViewController: UIViewController {
                 }
             }
         }
+        
+        if vm.isCurrentUserHost() {
+            vm.getPlayerState { [self] result in
+                switch result {
+                case .failure(let error):
+                    if case .badResponse(let code, let description, let json) = error {
+                        print(code)
+                        print(description)
+                        print(json)
+                    }
+                case .success(let response):
+                    if response.isPlaying == nil || response.isPlaying == false {
+                        DispatchQueue.main.async {
+                            spotifyPlayButton.isHidden = false
+                        }
+                    }
+                }
+            }
+        }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.prefersLargeTitles = false
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if self.isBeingDismissed || self.isMovingFromParent {
+            vm.removeRoomChangeListener()
+            vm.removeMemberChangeListener()
+            vm.removePlaylistChangeListener()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -83,14 +111,14 @@ class PlaylistViewController: UIViewController {
     }
     
     @IBAction func playButtonPressed(_ sender: UIButton) {
-        vm.wakeAndPlay { [self] result in
+        vm.wakeAndPlay { result in
             if case .failure(let error) = result {
                 print(error)
-                if let error = error as NSError?, error.code == 1 {
-                    presentAlert(title: "Your internet connection is unstable", actionTitle: "Dismiss")
-                    return
-                }
-                presentAlert(title: error.localizedDescription, actionTitle: "Dismiss")
+//                if let error = error as NSError?, error.code == 1 {
+//                    presentAlert(title: "Your internet connection is unstable", actionTitle: "Dismiss")
+//                    return
+//                }
+//                presentAlert(title: error.localizedDescription, actionTitle: "Dismiss")
             }
         }
     }

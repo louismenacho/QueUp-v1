@@ -328,6 +328,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XiE-8D-0ul" customClass="SpotifyPlayButton" customModule="QueUp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="185" height="39"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                         <color key="tintColor" red="0.11443904789999999" green="0.72594159840000005" blue="0.32852503659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -584,7 +585,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0pC-m9-uQU">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="rectangle.portrait.and.arrow.right" id="H5Z-6O-NAs">
+                        <barButtonItem key="rightBarButtonItem" title="Close" image="rectangle.portrait.and.arrow.right" id="H5Z-6O-NAs">
                             <color key="tintColor" systemColor="systemRedColor"/>
                             <connections>
                                 <action selector="leaveRoomButtonPressed:" destination="s2F-mK-hxT" id="6vT-xO-J6o"/>
@@ -638,7 +639,7 @@
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
-        <image name="rectangle.portrait.and.arrow.right" width="28.332500457763672" height="26.184099197387695"/>
+        <image name="rectangle.portrait.and.arrow.right" width="24.666666030883789" height="22.666666030883789"/>
         <image name="spotify.icon" width="30" height="30"/>
         <image name="spotify.icon.green" width="20" height="20"/>
         <image name="sun.min.fill" catalog="system" width="128" height="121"/>
