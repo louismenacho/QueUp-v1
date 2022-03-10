@@ -18,17 +18,12 @@ class PlaylistViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Queue"
+        navigationItem.title = "Songs Added"
         navigationItem.searchController = prepareSearchController()
         navigationItem.hidesSearchBarWhenScrolling = false
         tableView.dataSource = self
         tableView.delegate = self
         spotifyPlayButton.isHidden = true
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.prefersLargeTitles = false
         
         vm.roomChangeListener { [self] result in
             switch result {
@@ -88,6 +83,11 @@ class PlaylistViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
