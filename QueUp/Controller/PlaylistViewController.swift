@@ -10,6 +10,7 @@ import UIKit
 class PlaylistViewController: UIViewController {
     
     var vm: PlaylistViewModel!
+    var selectedPlaylistItem: PlaylistItem?
     var searchViewController: SearchViewController!
     
     @IBOutlet weak var tableView: UITableView!
@@ -104,6 +105,13 @@ class PlaylistViewController: UIViewController {
             let vc = segue.destination as! RoomDetailsViewController
             vc.vm = RoomDetailsViewModel(vm.room, vm.currentMember)
         }
+        if segue.identifier == "SongDetailsViewController" {
+            let vc = segue.destination as! SongDetailsViewController
+            if let playlistItem =  selectedPlaylistItem {
+                vc.song = playlistItem.song
+                vc.isCurrentUserHost = vm.isCurrentUserHost()
+            }
+        }
     }
     
     @IBAction func addSongButtonPressed(_ sender: UIButton) {
@@ -111,14 +119,16 @@ class PlaylistViewController: UIViewController {
     }
     
     @IBAction func playButtonPressed(_ sender: UIButton) {
+//        UIApplication.shared.open(URL(string: "spotify://")!, options: [:], completionHandler: nil)
         vm.wakeAndPlay { result in
             if case .failure(let error) = result {
                 print(error)
-//                if let error = error as NSError?, error.code == 1 {
-//                    presentAlert(title: "Your internet connection is unstable", actionTitle: "Dismiss")
-//                    return
-//                }
-//                presentAlert(title: error.localizedDescription, actionTitle: "Dismiss")
+            }
+            UIView.animate(withDuration: 0.3) {
+                self.spotifyPlayButton.alpha = 0
+            } completion: { _ in
+                self.spotifyPlayButton.isHidden = true
+                self.spotifyPlayButton.alpha = 1
             }
         }
     }
@@ -126,6 +136,7 @@ class PlaylistViewController: UIViewController {
     private func prepareSearchController() -> UISearchController? {
         searchViewController = storyboard?.instantiateViewController(identifier: "SearchViewController") as? SearchViewController
         searchViewController.vm = SearchViewModel(vm.room.spotifyToken)
+        searchViewController.vm.isCurrentUserHost = vm.isCurrentUserHost()
         searchViewController.delegate = self
         
         let searchController = UISearchController(searchResultsController: searchViewController)
@@ -171,6 +182,8 @@ extension PlaylistViewController: UITableViewDataSource {
 extension PlaylistViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedPlaylistItem = vm.playlist[indexPath.row]
+        performSegue(withIdentifier: "SongDetailsViewController", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

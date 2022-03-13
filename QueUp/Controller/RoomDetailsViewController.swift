@@ -64,39 +64,59 @@ class RoomDetailsViewController: UIViewController {
 
 extension RoomDetailsViewController: UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        vm.members.count
+        if section == 0 {
+            return vm.members.count
+        } else {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MemberTableViewCell", for: indexPath) as? MemberTableViewCell else {
-            return UITableViewCell()
+        if indexPath.section == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "MemberTableViewCell", for: indexPath) as? MemberTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.member = vm.members[indexPath.row]
+            cell.isUserInteractionEnabled = vm.currentMember.isHost
+            if vm.currentMember.isHost {
+                cell.accessoryType = cell.member.isHost ? .none : .disclosureIndicator
+                cell.isUserInteractionEnabled = !cell.member.isHost
+            }
+            return cell
+        } else {
+            return tableView.dequeueReusableCell(withIdentifier: "ClearQueueTableViewCell", for: indexPath)
         }
-        cell.member = vm.members[indexPath.row]
-        cell.isUserInteractionEnabled = vm.currentMember.isHost
-        if vm.currentMember.isHost {
-            cell.accessoryType = cell.member.isHost ? .none : .disclosureIndicator
-            cell.isUserInteractionEnabled = !cell.member.isHost
-        }
-        return cell
     }
 }
 
 extension RoomDetailsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let member = vm.members[indexPath.row]
-        presentAlert(title: member.displayName, style: .actionSheet, actionTitle: "Remove", actionStyle: .destructive) { [self] _ in
-            vm.deleteMember(at: indexPath.row) { result in
-                if case .failure(let error) = result {
-                    print(error)
+        if indexPath.section == 0 {
+            let member = vm.members[indexPath.row]
+            presentAlert(title: member.displayName, style: .actionSheet, actionTitle: "Remove", actionStyle: .destructive) { [self] _ in
+                vm.deleteMember(at: indexPath.row) { result in
+                    if case .failure(let error) = result {
+                        print(error)
+                    }
                 }
             }
+        } else {
+            
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Members \(vm.members.count)/8"
+        if section == 0 {
+            return "Members \(vm.members.count)/8"
+        } else {
+            return "Clear Queue"
+        }
     }
 }

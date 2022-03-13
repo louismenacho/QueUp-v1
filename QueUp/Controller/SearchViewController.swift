@@ -17,6 +17,7 @@ class SearchViewController: UIViewController {
     weak var delegate: SearchViewControllerDelegate?
     
     var vm: SearchViewModel!
+    var selectedSearchResultItem: SearchResultItem?
     
     lazy var activityIndicator = ActivityIndicatorView(frame: view.bounds)
     @IBOutlet weak var tableViewHeaderLabel: UILabel!
@@ -26,6 +27,16 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SongDetailsViewController" {
+            let vc = segue.destination as! SongDetailsViewController
+            if let searchResultItem =  selectedSearchResultItem {
+                vc.song = searchResultItem.song
+                vc.isCurrentUserHost = vm.isCurrentUserHost
+            }
+        }
     }
 }
 
@@ -80,6 +91,12 @@ extension SearchViewController: UITableViewDataSource {
 }
 
 extension SearchViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedSearchResultItem = vm.searchResult[indexPath.row]
+        performSegue(withIdentifier: "SongDetailsViewController", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 68

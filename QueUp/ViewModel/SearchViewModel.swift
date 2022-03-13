@@ -10,6 +10,7 @@ import Foundation
 class SearchViewModel: NSObject {
     
     var searchResult = [SearchResultItem]()
+    var isCurrentUserHost = false
     
     private var spotifySearchAPI = SpotifyAPIClient<SpotifySearchAPI>()
     private var spotifyPlayerAPI = SpotifyAPIClient<SpotifyPlayerAPI>()
