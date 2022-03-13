@@ -15,7 +15,7 @@ class PlaylistTableViewCell: UITableViewCell {
             albumImageView.sd_setImage(with: URL(string: playlistItem.song.artworkURL), placeholderImage: UIImage(systemName: "image"))
             songTitleLabel.text = playlistItem.song.name
             artistNamesLabel.text = playlistItem.song.artist
-            addedByMemberLabel.text?.append(playlistItem.addedBy.displayName)
+            addedByMemberLabel.text = "Added by \(playlistItem.addedBy.displayName)"
         }
     }
     

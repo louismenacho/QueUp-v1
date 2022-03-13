@@ -116,7 +116,7 @@ extension RoomDetailsViewController: UITableViewDelegate {
         if section == 0 {
             return "Members \(vm.members.count)/8"
         } else {
-            return "Clear Queue"
+            return ""
         }
     }
 }

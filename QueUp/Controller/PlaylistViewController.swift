@@ -19,7 +19,7 @@ class PlaylistViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Songs Added"
+        navigationItem.title = "Song Requests"
         navigationItem.searchController = prepareSearchController()
         navigationItem.hidesSearchBarWhenScrolling = false
         tableView.dataSource = self
