@@ -30,14 +30,21 @@ class HomeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationItem.backButtonTitle = "Home"
+        super.viewWillAppear(animated)
+        navigationItem.title = ""
         navigationController?.navigationBar.prefersLargeTitles = true
         vm = HomeViewModel()
         formView.setRoomCode(UserDefaultsRepository().roomID)
         formView.setDisplayName(UserDefaultsRepository().displayName)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationItem.title = "Home"
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
         if segue.identifier == "PlaylistViewController" {
             guard let currentMember = vm.currentMember else { return }
             guard let currentRoom = vm.currentRoom else { return }

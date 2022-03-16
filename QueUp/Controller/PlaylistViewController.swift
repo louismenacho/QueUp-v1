@@ -19,7 +19,6 @@ class PlaylistViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Song Requests"
         navigationItem.searchController = prepareSearchController()
         navigationItem.hidesSearchBarWhenScrolling = false
         tableView.dataSource = self
@@ -88,11 +87,13 @@ class PlaylistViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationItem.title = "Song Requests"
         navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        navigationItem.title = "Back"
         if self.isBeingDismissed || self.isMovingFromParent {
             vm.removeRoomChangeListener()
             vm.removeMemberChangeListener()
@@ -119,7 +120,6 @@ class PlaylistViewController: UIViewController {
     }
     
     @IBAction func playButtonPressed(_ sender: UIButton) {
-//        UIApplication.shared.open(URL(string: "spotify://")!, options: [:], completionHandler: nil)
         vm.wakeAndPlay { result in
             if case .failure(let error) = result {
                 print(error)

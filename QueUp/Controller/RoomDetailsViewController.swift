@@ -107,7 +107,7 @@ extension RoomDetailsViewController: UITableViewDelegate {
                 }
             }
         } else {
-            
+            performSegue(withIdentifier: "InstructionsViewController", sender: self)
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -116,7 +116,7 @@ extension RoomDetailsViewController: UITableViewDelegate {
         if section == 0 {
             return "Members \(vm.members.count)/8"
         } else {
-            return ""
+            return "Help"
         }
     }
 }
