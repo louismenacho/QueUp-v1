@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>84504544820-07ecp7bgf3a1bnpubfsl4f6gis5bjrda.apps.googleusercontent.com</string>
+	<string>84504544820-7pqgb7hlukq56iagh21t4rgim12qt6p4.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.84504544820-07ecp7bgf3a1bnpubfsl4f6gis5bjrda</string>
+	<string>com.googleusercontent.apps.84504544820-7pqgb7hlukq56iagh21t4rgim12qt6p4</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCXpgqhw_2pFfgTF5koKoP5IJ3Ku6NpP6o</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.louismenacho.QueUp</string>
+	<string>com.louismenacho.queupmusic</string>
 	<key>PROJECT_ID</key>
 	<string>queupmusic</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:84504544820:ios:18d7fc93a31713bc2eec61</string>
+	<string>1:84504544820:ios:97218cd655da6f322eec61</string>
 </dict>
 </plist>

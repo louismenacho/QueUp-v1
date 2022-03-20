@@ -11,7 +11,6 @@
 		95258D5427A788C50048A18B /* QueUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95258D5327A788C50048A18B /* QueUpTests.swift */; };
 		95258D5E27A788C50048A18B /* QueUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95258D5D27A788C50048A18B /* QueUpUITests.swift */; };
 		95258D6027A788C50048A18B /* QueUpUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95258D5F27A788C50048A18B /* QueUpUITestsLaunchTests.swift */; };
-		95258D8027B0FC940048A18B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95258D7F27B0FC940048A18B /* GoogleService-Info.plist */; };
 		95258DC827B100990048A18B /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95258D8627B100990048A18B /* UIViewController+Alert.swift */; };
 		95258DC927B100990048A18B /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95258D8827B100990048A18B /* APIClient.swift */; };
 		95258DCA27B100990048A18B /* SpotifyReponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95258D8B27B100990048A18B /* SpotifyReponseModels.swift */; };
@@ -72,6 +71,7 @@
 		95C9137A27B3578800640954 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 95C9137927B3578800640954 /* SDWebImage */; };
 		95D8ABE527B3562100501FDC /* SpotifyiOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D8ABE427B3562100501FDC /* SpotifyiOS.xcframework */; };
 		95D8ABE627B3562100501FDC /* SpotifyiOS.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95D8ABE427B3562100501FDC /* SpotifyiOS.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95F634E427E2FA46000934B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95F634E327E2FA46000934B4 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,7 +115,6 @@
 		95258D5D27A788C50048A18B /* QueUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueUpUITests.swift; sourceTree = "<group>"; };
 		95258D5F27A788C50048A18B /* QueUpUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueUpUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		95258D7127B025820048A18B /* QueUp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QueUp-Bridging-Header.h"; sourceTree = "<group>"; };
-		95258D7F27B0FC940048A18B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		95258D8627B100990048A18B /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		95258D8827B100990048A18B /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		95258D8B27B100990048A18B /* SpotifyReponseModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyReponseModels.swift; sourceTree = "<group>"; };
@@ -171,6 +170,7 @@
 		958DB6AA27B35C3F0038F7C9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		958DB6AB27B35C3F0038F7C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		95D8ABE427B3562100501FDC /* SpotifyiOS.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SpotifyiOS.xcframework; path = Framework/SpotifyiOS.xcframework; sourceTree = "<group>"; };
+		95F634E327E2FA46000934B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,7 +232,7 @@
 				95258D7127B025820048A18B /* QueUp-Bridging-Header.h */,
 				95258D4527A788C50048A18B /* Assets.xcassets */,
 				95258D4A27A788C50048A18B /* Info.plist */,
-				95258D7F27B0FC940048A18B /* GoogleService-Info.plist */,
+				95F634E327E2FA46000934B4 /* GoogleService-Info.plist */,
 				9582F9CA27DE88D100C112DC /* Resources */,
 				95258D8527B100990048A18B /* Extension */,
 				95258D8727B100990048A18B /* Client */,
@@ -573,9 +573,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95258D8027B0FC940048A18B /* GoogleService-Info.plist in Resources */,
 				95258D4627A788C50048A18B /* Assets.xcassets in Resources */,
 				9582F9CC27DE88ED00C112DC /* spotify.clear.queue.gif in Resources */,
+				95F634E427E2FA46000934B4 /* GoogleService-Info.plist in Resources */,
 				95258DD927B100990048A18B /* Main.storyboard in Resources */,
 				95258DD827B100990048A18B /* LaunchScreen.storyboard in Resources */,
 			);
@@ -829,6 +829,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VBG939BMVJ;
@@ -843,8 +844,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.louismenacho.QueUp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.louismenacho.queupmusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "QueUp/QueUp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -857,6 +859,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VBG939BMVJ;
@@ -871,8 +874,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.louismenacho.QueUp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.louismenacho.queupmusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "QueUp/QueUp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -885,9 +889,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A483ZL3R6R;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -898,6 +902,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.louismenacho.QueUpTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -910,9 +916,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A483ZL3R6R;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -923,6 +929,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.louismenacho.QueUpTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -934,9 +942,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A483ZL3R6R;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -946,6 +954,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.louismenacho.QueUpUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -957,9 +967,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A483ZL3R6R;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -969,6 +979,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.louismenacho.QueUpUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

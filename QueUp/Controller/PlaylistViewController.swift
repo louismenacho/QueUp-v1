@@ -57,7 +57,7 @@ class PlaylistViewController: UIViewController {
                 print(error)
                 presentAlert(title: error.localizedDescription, actionTitle: "Dismiss")
             case .success:
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [self] in
                     tableView.reloadData()
                     tableView.isScrollEnabled = !vm.playlist.isEmpty
                     addSongsButton.isHidden = !vm.playlist.isEmpty
@@ -76,7 +76,7 @@ class PlaylistViewController: UIViewController {
                     }
                 case .success(let response):
                     if response.isPlaying == nil || response.isPlaying == false {
-                        DispatchQueue.main.async {
+                        DispatchQueue.main.async { [self] in
                             spotifyPlayButton.isHidden = false
                         }
                     }

@@ -49,7 +49,7 @@ extension SearchViewController: UISearchResultsUpdating {
             activityIndicator.stopAnimating()
             switch result {
             case .success:
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [self] in
                     tableView.reloadData()
                 }
             case .failure(let error):
@@ -126,7 +126,7 @@ extension SearchViewController: SearchTableViewCellDelegate {
                     print(error)
                     presentAlert(title: error.localizedDescription.capitalized, actionTitle: "Dismiss")
                 }
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [self] in
                     tableView.reloadData()
                 }
             }
