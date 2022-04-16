@@ -24,6 +24,16 @@ class RoomDetailsViewModel {
         self.memberRepository = FirestoreRepository<Member>(collectionPath: "rooms/"+room.id+"/members")
     }
     
+    func updateRoom(completion: @escaping (Result<Void, RepositoryError>) -> Void) {
+        roomRepository.update(room) { error in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(()))
+            }
+        }
+    }
+    
     func deleteRoom(completion: @escaping (Result<Void, RepositoryError>) -> Void) {
         roomRepository.delete(room) { error in
             if let error = error {
@@ -42,6 +52,17 @@ class RoomDetailsViewModel {
                 completion(.failure(error))
             case let .success(members):
                 self.members = members
+                if self.currentMember.isHost {
+                    self.room.memberCount = members.count
+                    self.updateRoom { result in
+                        switch result {
+                        case let .failure(error):
+                            completion(.failure(error))
+                        case .success:
+                            completion(.success(()))
+                        }
+                    }
+                }
                 completion(.success(()))
             }
         }

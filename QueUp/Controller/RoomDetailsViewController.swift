@@ -25,6 +25,7 @@ class RoomDetailsViewController: UIViewController {
         if !vm.currentMember.isHost {
             navigationItem.setRightBarButton(nil, animated: true)
         }
+        print(self.vm.room.memberCount)
     }
     
     override func viewWillAppear(_ animated: Bool) {
